@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>双色球号码组随机生成器</title>
+		<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="red">
+			<button v-on:click="getRed">随机产生</button>
+			<h3>红球:{{a}} {{b}} {{c}} {{d}} {{e}}</h3>
+			<h3>蓝球:{{x}}</h3>
+		</div>
+		
+		<script type="text/javascript">
+			var arr=[];
+			let v=new Vue({
+				el:'#red',
+				data:{
+					a:'',
+					b:'',
+					c:'',
+					d:'',
+					e:'',
+					x:''
+				},
+				methods:{
+					getRed:function(){
+						for(var i=0;i<5;i++){
+							var num=Math.floor(Math.random()*35+1);
+							arr[i]=num;			
+						}
+						this.a=arr[0];
+						this.b=arr[1];
+						this.c=arr[2];
+						this.d=arr[3];
+						this.e=arr[4];
+						var num1=Math.floor(Math.random()*15+1);
+						this.x=num1;
+					}
+				}
+			})
+			
+		</script>
+	</body>
+</html>
